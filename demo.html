@@ -3,19 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>Document</title>
   <style>
-    .body {
-      @media print {
-        body{
-          background-color: white;
-          display: none;
-        }
+    .my-button {
+      position: absolute;
+      background-color: red;
+      color: white;
+      height: 50px;
+      width: 100px;
+      border-radius: 5px;
+      font-size: 18px;
+      transition: all;
+      transition-duration: .5s;
+      animation-name: mern;
+      animation-duration: 10s;
+      left: -100px;
+      animation-timing-function: linear;
+      animation-direction: normal;
+      
+    }
+    @keyframes mern {
+      from {
+        left: -100px;   
+      }
+      to {
+        left: 100%; 
       }
     }
   </style>
 </head>
-<body class="body">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe hic itaque, eos rem unde ipsum quo doloremque assumenda iste maxime, id, quis eum exercitationem. Neque, ratione totam animi cum velit dolorum in saepe porro.</p>
+<body>
+  <button class="my-button">My Button</button>
 </body>
 </html>
