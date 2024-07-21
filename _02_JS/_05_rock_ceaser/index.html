@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .btn{
+      padding: 4px 8px;
+      margin: 2px;
+      height: 34px;
+      width: 100px;
+      background-color: rgb(3, 170, 3);
+      color: white;
+      border-radius: 8px;
+    }
+    .btn:active{
+      background-color: red;
+    }
+  </style>
+
+</head>
+<body>
+  <h1>Rock Paper Scissors Game</h1>
+  <p>Click one of the follwing to play the game.</p>
+  <div>
+    <button class="btn btn1" onclick="btn1ClickHandler()">✊Rock</button>
+    <button class="btn btn2" onclick="btn2ClickHandler()">✋Paper</button>
+    <button class="btn btn3" onclick="btn3ClickHandler()">✌️Scissors</button>
+  </div>
+  <div id="btnSelect"></div>
+</body>
+
+<script>
+  let btnSelect=document.querySelector("#btnSelect");
+  
+  const btn1ClickHandler=()=>{
+    let btn1=document.querySelector(".btn1");
+    btnSelect.innerHTML=`<h3>You Have Clicked On ${btn1.innerHTML}</h3>`
+  }
+  const btn2ClickHandler=()=>{
+    let btn2=document.querySelector(".btn2");
+    btnSelect.innerHTML=`<h3>You Have Clicked On ${btn2.innerHTML}</h3>`
+  }
+  const btn3ClickHandler=()=>{
+    let btn3=document.querySelector(".btn");
+    btnSelect.innerHTML=`<h3>You Have Clicked On ${btn3.innerHTML}</h3>`
+  }
+</script>
+
+</html>

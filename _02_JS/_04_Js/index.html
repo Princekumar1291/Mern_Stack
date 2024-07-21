@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .letter {
+      width: 80px;
+      height: 50px;
+      margin: 6px;
+      border-radius: 8px;
+    }
+
+    .container {
+      background-color: aqua;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
+      border-radius: 8px;
+    }
+
+    #inputDiv {
+      background-color: white;
+      height: 40px;
+      width: 90%;
+      box-sizing: border-box;
+      padding: 10px;
+      border: 2px solid black;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div id="inputDiv">
+
+    </div>
+    <div>
+      <button class="letter" onclick="
+      displayText='';
+      document.getElementById('inputDiv').innerText=displayText;
+      ">C</button>
+      <button class="letter" onclick="
+      displayText+='1';
+      document.getElementById('inputDiv').innerText=displayText;
+      ">1</button>
+      <button class=" letter" onclick="
+      displayText+='2';
+      document.getElementById('inputDiv').innerText=displayText;
+      ">2</button>
+    </div>
+    <div>
+      <button class="letter" onclick="
+      displayText+='+';
+      document.getElementById('inputDiv').innerText=displayText;
+      ">+</button>
+      <button class="letter" onclick="
+      displayText+='3';
+      document.getElementById('inputDiv').innerText=displayText;
+      ">3</button>
+      <button class="letter" onclick="
+      displayText+='4';
+      document.getElementById('inputDiv').innerText=displayText;
+      ">4</button>
+    </div>
+    <div>
+      <button class="letter " onclick="
+      displayText+='-';
+      document.getElementById('inputDiv').innerText=displayText;
+      ">-</button>
+      <button class="letter" onclick="
+      displayText+='5';
+      document.getElementById('inputDiv').innerText=displayText;
+      ">5</button>
+      <button class="letter" onclick="
+      displayText+='6';
+      document.getElementById('inputDiv').innerText=displayText;
+      ">6</button>
+    </div>
+    <div>
+      <button class="letter" onclick="
+      displayText+='*';
+      document.getElementById('inputDiv').innerText=displayText;
+      ">*</button>
+      <button class="letter" onclick="
+      displayText+='7';
+      document.getElementById('inputDiv').innerText=displayText;
+      ">7</button>
+      <button class="letter" onclick="
+      displayText+='8';
+      document.getElementById('inputDiv').innerText=displayText;
+      ">8</button>
+    </div>
+    <div>
+      <button class="letter" onclick="
+      displayText+='/';
+      document.getElementById('inputDiv').innerText=displayText;
+      ">/</button>
+      <button class="letter" onclick="
+      let Finaltext=document.getElementById('inputDiv').innerText;
+      let ans=eval(Finaltext)
+
+      document.getElementById('inputDiv').innerText=ans;
+      displayText=ans;
+      ">=</button>
+      <button class="letter" onclick="
+      displayText+='9';
+      document.getElementById('inputDiv').innerText=displayText;
+      ">9</button>
+    </div>
+    <div>
+      <button class="letter" onclick="
+      displayText+='0';
+      document.getElementById('inputDiv').innerText=displayText;
+      ">0</button>
+      <button class="letter" onclick="
+      displayText+='.';
+      document.getElementById('inputDiv').innerText=displayText;
+      ">.</button>
+    </div>
+  </div>
+</body>
+
+<script>
+  let displayText = ""
+</script>
+
+</html>

@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    .my-button {
-      position: absolute;
-      background-color: red;
-      color: white;
-      height: 50px;
-      width: 100px;
-      border-radius: 5px;
-      font-size: 18px;
-      transition: all;
-      transition-duration: .5s;
-      animation-name: mern;
-      animation-duration: 10s;
-      left: -100px;
-      animation-timing-function: linear;
-      animation-direction: normal;
-      
-    }
-    @keyframes mern {
-      from {
-        left: -100px;   
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .my-button {
+        position: absolute;
+        background-color: red;
+        color: white;
+        height: 50px;
+        width: 100px;
+        border-radius: 5px;
+        font-size: 18px;
+        transition: all;
+        transition-duration: 0.5s;
+        animation-name: mern;
+        animation-duration: 10s;
+        left: -100px;
+        animation-timing-function: linear;
+        animation-direction: normal;
       }
-      to {
-        left: 100%; 
+
+      @keyframes mern {
+        from {
+          left: -100px;
+        }
+
+        to {
+          left: 100%;
+        }
       }
-    }
-  </style>
-</head>
-<body>
-  <button class="my-button">My Button</button>
-</body>
+    </style>
+  </head>
+
+  <body>
+    <button class="my-button">My Button</button>
+  </body>
 </html>
