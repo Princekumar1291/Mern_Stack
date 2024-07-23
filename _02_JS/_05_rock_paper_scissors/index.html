@@ -67,14 +67,14 @@
     }
 
     let result=document.querySelector("#result");
-    if(randomSelect==t+1 || randomSelect==t-2){
+    if(t==randomSelect){
+      result.innerHTML=`<h3>Draw</h3>`
+    }
+    else if((t==1 && randomSelect==2) || (t==2 && randomSelect==3) || (t==3 && randomSelect==1)){
       result.innerHTML=`<h3>You Win</h3>`
     }
-    if(randomSelect==t-1 || randomSelect==t+2){
+    else{
       result.innerHTML=`<h3>You Lose</h3>`
-    }
-    if(randomSelect==t){
-      result.innerHTML=`<h3>Draw</h3>`
     }
     
   }
