@@ -1,40 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .my-button {
-        position: absolute;
-        background-color: red;
-        color: white;
-        height: 50px;
-        width: 100px;
-        border-radius: 5px;
-        font-size: 18px;
-        transition: all;
-        transition-duration: 0.5s;
-        animation-name: mern;
-        animation-duration: 10s;
-        left: -100px;
-        animation-timing-function: linear;
-        animation-direction: normal;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="demo"></div>
+  <script>
+    let sum=0;
+    let input;
+    let result =
+    "Is '123' NaN? " + isNaN('123') + "<br>" +
+    "Is 'Hello' NaN? " + isNaN('Hello') + "<br>" +
+    "Is '2005/12/12' NaN? " + isNaN('2005/12/12');
+    document.getElementById("demo").innerHTML = result;
+    do{
+      input = prompt("Enter a number");
+      if(!isNaN(input)){
+        sum+=Number(input);
       }
-
-      @keyframes mern {
-        from {
-          left: -100px;
-        }
-
-        to {
-          left: 100%;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <button class="my-button">My Button</button>
-  </body>
+    }while(!isNaN(input))
+    console.log(sum)
+  </script>
+</body>
 </html>
