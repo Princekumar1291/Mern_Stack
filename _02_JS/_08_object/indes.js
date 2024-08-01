@@ -14,3 +14,8 @@ let itemName='Running shoes';
 let price=800;
 let avgRation=4.5;
 let nmberOfRatine=38;
+
+
+let product2={
+  
+}
