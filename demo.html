@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append Class Example</title>
+    <style>
+        .original {
+            color: blue;
+        }
+        .new-class {
+            font-weight: bold;
+        }
+    </style>
 </head>
-
 <body>
-  <div id="demo">he is a boy
-    <p>mango</p>
-    <p>lichi</p>
-    <p>orange</p>
-  </div>
-  <script>
-    let demo = document.querySelector("#demo");
-    console.log(demo.innerHTML)
-    console.log(demo.innerText)
-  </script>
-</body>
+    <p id="myElement" class="original">This is a paragraph.</p>
 
+    <script>
+        // Select the element
+        var element = document.getElementById('myElement');
+
+        // Append a new class
+        element.classList.add('new-class');
+    </script>
+</body>
 </html>
