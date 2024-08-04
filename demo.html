@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
-  <div id="demo"></div>
+  <div id="demo">he is a boy
+    <p>mango</p>
+    <p>lichi</p>
+    <p>orange</p>
+  </div>
   <script>
-    let sum=0;
-    let input;
-    let result =
-    "Is '123' NaN? " + isNaN('123') + "<br>" +
-    "Is 'Hello' NaN? " + isNaN('Hello') + "<br>" +
-    "Is '2005/12/12' NaN? " + isNaN('2005/12/12');
-    document.getElementById("demo").innerHTML = result;
-    do{
-      input = prompt("Enter a number");
-      if(!isNaN(input)){
-        sum+=Number(input);
-      }
-    }while(!isNaN(input))
-    console.log(sum)
+    let demo = document.querySelector("#demo");
+    console.log(demo.innerHTML)
+    console.log(demo.innerText)
   </script>
 </body>
+
 </html>
