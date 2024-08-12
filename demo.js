@@ -1,13 +1,5 @@
-//higher order function
-//funcation that return a function
+let element = document.getElementById("myElement");
 
-function getGreetMethod(){
-  return function (){
-    console.log("This is also higher order function")
-  }
-}
-
-
-let fun=getGreetMethod()
-
-fun()
+element.addEventListener("click", function () {
+  this.style.color = "red";
+})
