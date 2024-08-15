@@ -1,5 +1,9 @@
-let element = document.getElementById("myElement");
+// async await
 
-element.addEventListener("click", function () {
-  this.style.color = "red";
-})
+async function hello(){
+  return "Hello World!";
+}
+
+let str=hello();
+console.log(str);
+console.log(typeof str) 
