@@ -1,14 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import AppContext from '../store/AppContext';
 
-function Data({ data, date, id, setTodoData }) {
-
-  const deleteItem = (id) => {
-    setTodoData((prevData)=>{
-      return prevData.filter((data)=>{
-        return data.id!=id;
-      });
-    })
-  }
+function Data({ data, date, id }) {
+  const {deleteItem} = useContext(AppContext);
 
   return (
     <div className="row my-3">

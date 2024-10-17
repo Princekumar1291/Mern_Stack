@@ -25,8 +25,8 @@ function App() {
   return (
     <div className='flex justify-content-center align-items-center myclass'>
       <Heading/>
-      <IndertData/>
-      <Datas todoData={todoData}></Datas>
+      <IndertData setTodoData={setTodoData}/>
+      <Datas todoData={todoData} setTodoData={setTodoData}></Datas>
     </div> 
   )
 }

@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Data from './Data'
+import AppContext from '../store/AppContext'
 
-function Datas({todoData,setTodoData}) {
+function Datas() {
+  const {todoData}=useContext(AppContext);
+  const {setTodoData}=useContext(AppContext);
+  
   return (
     <div>
       {
