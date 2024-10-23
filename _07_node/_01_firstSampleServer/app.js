@@ -1,5 +1,18 @@
 const http=require('http');
-const PORT=5000;
+const PORT=3000;
+
+const requestHandler = (req, res) => {
+  // console.log(Object.keys(req));
+  // console.log(req.statusMessage);
+  
+  // console.log(Object.keys(res));
+  // console.log(req._trailer);
+
+  console.log(Object.getOwnPropertyNames(req));
+};
+
+// Example usage with your incoming request object.
+
 
 const requestHandler1=(req,res)=>{
   console.log("request url: ",req.url);

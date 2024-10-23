@@ -66,17 +66,6 @@ const requestHandler1 = (req, res) => {
         </body>
       </html>
     `);
-  } else if (req.url === "/contact") {
-    res.write(`
-      <html>
-        <head>
-          <title>My Contact Page</title>
-        </head>
-        <body>
-          <h1>Contact Page</h1>
-        </body>
-      </html>
-    `);
   } else {
     res.statusCode = 404;
     res.write(`
