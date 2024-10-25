@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 const bodyParser = require('body-parser');
+const path = require('path');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); //to send json data
@@ -31,7 +32,12 @@ app.get('/', (req, res) => {
 app.post('/buy-product', (req, res) => {
     // console.log("form data received: ", req.body);
     console.log("form data received: ", JSON.stringify(req.body));
-    fs.writeFile('./products.json', JSON.stringify(req.body), (err) => {
+    const filePath = path.join(__dirname, 'products.json');
+    fs.writeFile(filePath, JSON.stringify(req.body), (err) => {
+        if (err) {
+            console.error('Error writing to file:', err);
+            return res.status(500).send('Server Error');
+        }
         res.redirect('/products');
     })
 })
