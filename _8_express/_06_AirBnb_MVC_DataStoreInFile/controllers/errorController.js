@@ -4,4 +4,4 @@ const get404 = (req, res, next) => {
 
 module.exports = {
   get404
-}
+} 
