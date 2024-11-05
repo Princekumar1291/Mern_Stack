@@ -11,8 +11,12 @@ const postAddHome = (req, res, next) => {
   const rating = req.body.rating;
   const photoUrl = req.body.photoUrl;
   const home = new Home(name, price, location, rating, photoUrl);
-  home.saveHome();
-  res.status(200).render('home-added',{pageTitle: 'Home Added'});
+  home.saveHome((error)=>{
+    if(error) res.redirect('/');
+    else{
+      res.status(200).render('home-added',{pageTitle: 'Home Added'});
+    }
+  });
 }
 
 module.exports = {
