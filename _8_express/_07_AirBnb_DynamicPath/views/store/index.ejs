@@ -1,11 +1,12 @@
-<%- include('partials/head') %>
+<%- include('../partials/head') %>
   </head>
   <body class="min-h-screen bg-gray-100 py-6 px-4">
-    <div class="max-w-4xl mx-auto">
-      <%- include('partials/nav') %>
-      <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="w-full mx-auto">
+      <%- include('../partials/nav') %>
+      <h1 class="text-3xl font-bold mb-4 text-center">Welcome to Bnb</h1>
+      <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
         <% registeredHomes.forEach(home => { %>
-          <li class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden">
+          <li class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden w-full">
             <img src="<%= home.photoUrl %>" alt="<%= home.name %>" class="w-full h-48 object-cover">
             <div class="p-4">
               <h2 class="text-xl font-semibold text-gray-800 mb-2"><%= home.name %></h2>

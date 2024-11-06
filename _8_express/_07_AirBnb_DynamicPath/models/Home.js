@@ -21,6 +21,7 @@ class Home {
     });
   }
   saveHome(callback) {
+    this.id=Math.random().toString();
     Home.fetchAllHomes((homes) => {
       homes.push(this);
       fs.writeFile(filePath, JSON.stringify(homes), error => {
@@ -31,6 +32,12 @@ class Home {
           callback(null);
         }
       });
+    });
+  }
+  static findById(homeId,callback){
+    Home.fetchAllHomes((homes) => {
+      const home = homes.find(home => home.id === homeId);
+      callback(home);
     });
   }
 }

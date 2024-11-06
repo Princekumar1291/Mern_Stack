@@ -1,0 +1,45 @@
+<%- include('../partials/head') %>
+  </head>
+
+  <body class="min-h-screen bg-gradient-to-b from-blue-50 to-gray-100 py-10 px-6">
+    <div class="w-full mx-auto">
+      <%- include('../partials/nav') %>
+        <h1 class="text-4xl font-extrabold text-center text-blue-900 mb-6 tracking-wide">Home Details</h1>
+        <section
+          class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full">
+          <img src="<%= home.photoUrl %>" alt="<%= home.name %>" class="w-full h-72 object-cover">
+          <div class="p-6">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-2">
+              <%= home.name %>
+            </h2>
+            <div class="flex items-center my-3">
+              <span class="text-lg font-bold text-blue-600">Price:</span>
+              <span class="text-lg ml-2 text-gray-700">
+                <%= home.price %>
+              </span>
+            </div>
+            <div class="flex items-center my-3">
+              <span class="text-lg font-bold text-blue-600">Location:</span>
+              <span class="text-lg ml-2 text-gray-700">
+                <%= home.location %>
+              </span>
+            </div>
+            <div class="flex items-center my-3">
+              <span class="text-lg font-bold text-blue-600">Rating:</span>
+              <span class="text-lg ml-2 text-yellow-500">
+                <%= home.rating %> <span class="ml-1">&#9733;</span>
+              </span>
+            </div>
+            <div class="flex justify-between items-center">
+              <button
+              class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                Book Now
+              </button>
+              <%- include('../partials/addToFavorite',{home}) %>
+            </div>
+          </div>
+        </section>
+    </div>
+  </body>
+
+  </html>

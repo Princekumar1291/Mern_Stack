@@ -1,7 +1,7 @@
 const { Home } = require("../models/Home");
 
 const getAddHome = (req,res,next)=>{
-  res.status(200).render('add-home',{pageTitle: 'Add Home'});
+  res.status(200).render('host/add-home',{pageTitle: 'Add Home'});
 }
 
 const postAddHome = (req, res, next) => {
@@ -14,7 +14,7 @@ const postAddHome = (req, res, next) => {
   home.saveHome((error)=>{
     if(error) res.redirect('/');
     else{
-      res.status(200).render('home-added',{pageTitle: 'Home Added'});
+      res.status(200).render('host/home-added',{pageTitle: 'Home Added'});
     }
   });
 }
