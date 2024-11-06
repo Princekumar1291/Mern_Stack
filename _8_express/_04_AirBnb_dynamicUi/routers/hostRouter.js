@@ -1,8 +1,4 @@
 const express = require('express');
-const path = require('path');
-const rootDir = require('../utils.js/path-util');
-const { render } = require('ejs');
-
 const hostRouter = express.Router();
 
 const registeredHomes = [];
