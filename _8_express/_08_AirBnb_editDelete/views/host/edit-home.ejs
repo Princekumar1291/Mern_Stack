@@ -1,0 +1,82 @@
+<%- include('../partials/head') %>
+</head>
+<body class="min-h-screen bg-gray-100 py-6 px-4">
+  <div class="w-full mx-auto">
+    <%- include('../partials/nav') %>
+    <h1 class="text-3xl font-bold mb-8 text-red-500 text-center"><%=editing==true?'Edit':'Add'%> Home</h1>
+    <form action="/host/<%= editing==true?'edit-home':'add-home' %>" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-md mx-auto">
+      <div class="mb-4">
+        <input class="hidden" type="text" name="id" id="" value="<%= editing==true?home.id:''%>">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+          Name of your house
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+          type="text" 
+          name="name" 
+          id="name"
+          placeholder="Enter house name"
+          value="<%= editing==true?home.name:''%>"
+          required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="price">
+          Price per night
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+          type="number" 
+          name="price" 
+          id="price"
+          placeholder="Enter price per night"
+          value="<%= editing==true?home.price:''%>"
+          required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="location">
+          Location
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+          type="text" 
+          name="location" 
+          id="location"
+          placeholder="Enter location"
+          value="<%= editing==true?home.location:''%>"
+          required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="rating">
+          Rating
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+          type="number" 
+          name="rating" 
+          id="rating"
+          placeholder="Enter rating (1-5)"
+          min="1"
+          max="5"
+          step="0.1"
+          value="<%= editing==true?home.rating:''%>"
+          required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="photoUrl">
+          Photo URL
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+          type="text" 
+          name="photoUrl" 
+          id="photoUrl"
+          placeholder="Enter photo URL"
+          value="<%= editing==true?home.photoUrl:''%>"
+          required>
+      </div>
+      <div class="flex items-center justify-end">
+        <input 
+          class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer transition-colors duration-200 w-full" 
+          type="submit" 
+          value="<%= editing==true?'Update':'Add' %> Home">
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
