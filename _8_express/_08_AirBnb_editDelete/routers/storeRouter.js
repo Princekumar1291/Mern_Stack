@@ -5,7 +5,8 @@ const storeRouter = express.Router();
 storeRouter.get('/',storeController.getIndex);
 storeRouter.get('/homes',storeController.getHomes);
 storeRouter.get('/homes/:homeId',storeController.getHomeDetails);
-storeRouter.get("/favorites", storeController.getFavorites);
-storeRouter.post("/favorites", storeController.postAddFavorites);
+storeRouter.get("/favourite", storeController.getFavorites);
+storeRouter.post("/favourite", storeController.postAddFavorites);
+storeRouter.post("/favourite/remove-favourite/:homeId", storeController.postDeleteFavorites);
 
 module.exports = storeRouter;

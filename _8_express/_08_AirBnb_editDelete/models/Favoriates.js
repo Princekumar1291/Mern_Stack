@@ -3,7 +3,8 @@ const path = require("path");
 const rootDir = require("../utils.js/path-util");
 const filePath = path.join(rootDir, "data", "favoriates.json");
 
-class Favorites {
+class Favourite {
+
   static fetchAllFavoriates(callback) {
     fs.readFile(filePath, (error, fileContent) => {
       if (error) {
@@ -15,7 +16,7 @@ class Favorites {
   }
 
   static saveFavoriate(homeId, callback) {
-    Favorites.fetchAllFavoriates((favoriateIds) => {
+    Favourite.fetchAllFavoriates((favoriateIds) => {
       favoriateIds.push(homeId);
       fs.writeFile(filePath, JSON.stringify(favoriateIds), error => {
         if (error) {
@@ -27,9 +28,23 @@ class Favorites {
       });
     })
   }
+
+  static deleteFavoriate(homeId, callback) {
+    Favourite.fetchAllFavoriates((favoriateIds) => {
+      const newFavoriates = favoriateIds.filter(id => id !== homeId);
+      fs.writeFile(filePath,JSON.stringify(newFavoriates), error => {
+        if (error) {
+          console.log("Error in writing file", error);
+          callback(error);
+        } else {
+          callback(null);
+        }
+      })
+    })
+  }
   
 }
 
 module.exports = {
-  Favorites,
+  Favourite,
 };

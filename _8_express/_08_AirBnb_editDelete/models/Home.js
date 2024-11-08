@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const rootDir = require("../utils.js/path-util");
+const { Favourite } = require("./Favoriates");
 const filePath = path.join(rootDir, "data", "homes.json");
 
 class Home {
@@ -67,6 +68,11 @@ class Home {
           callback(error);
         } else {
           callback(null);
+          Favourite.deleteFavoriate(homeId, (error) => {
+            if (error) {
+              console.log("Error in writing file", error);
+            }
+          });
         }
       })
     })

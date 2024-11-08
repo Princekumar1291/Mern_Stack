@@ -1,4 +1,4 @@
-const { Favorites } = require("../models/Favoriates");
+const { Favourite } = require("../models/Favoriates");
 const { Home } = require("../models/Home");
 
 const getIndex = (req, res, next) => {
@@ -22,27 +22,32 @@ const getHomeDetails = (req, res, next) => {
 
 
 const getFavorites = (req, res, next) => {
-  Favorites.fetchAllFavoriates(registeredHomesIds => {
+  Favourite.fetchAllFavoriates(registeredHomesIds => {
     Home.fetchAllHomes(registeredHomes => {
       const favoriatesHomes=registeredHomes.filter((home)=> registeredHomesIds.includes(home.id));
-      res.render('store/favourites', { favouritesHomes: favoriatesHomes, pageTitle: 'Favorites' });
+      res.render('store/favourites', { favouritesHomes: favoriatesHomes, pageTitle: 'Favourite' });
     })
   });
 }
 
-// const getFavorites = (req, res, next) => {
-//   Home.fetchAllHomes(registeredHomes => {
-//     res.render('store/favourites', { registeredHomes: registeredHomes, pageTitle: 'Favorites' });
-//   });
-// }
+const postDeleteFavorites=(req, res, next) => {
+  const homeId = req.params.homeId;
+  Favourite.deleteFavoriate(homeId, (error) => {
+    if (error) {
+      console.log(error);
+    }
+    res.redirect('/favourite');
+  })
+}
+
 
 const postAddFavorites = (req, res, next) => {
   const homeId = req.body.homeId;
-  Favorites.saveFavoriate(homeId, (error) => {
+  Favourite.saveFavoriate(homeId, (error) => {
     if (error) {
       console.log(error);
     }    
-    res.redirect('/favorites');
+    res.redirect('/favourite');
   })
 }
 
@@ -51,5 +56,6 @@ module.exports = {
   getIndex,
   getHomeDetails,
   getFavorites,
-  postAddFavorites
+  postAddFavorites,
+  postDeleteFavorites
 }
