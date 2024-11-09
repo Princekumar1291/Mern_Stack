@@ -1,0 +1,69 @@
+<header class="flex justify-between items-center mb-8 shadow-md p-4 rounded-lg bg-white relative">
+  <h1 class="text-4xl font-bold text-blue-900">AirBnb</h1>
+  <button class="flex justify-center items-center w-12 h-10  text-3xl text-black rounded-lg md:hidden font-extrabold" id="nav-toggle">
+    ☰
+  </button>
+  <div class="hidden md:flex gap-4" id="nav-links">
+    <a href="/" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+      AirBnb
+    </a>
+    <a href="/homes" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+      Homes
+    </a>
+    <a href="/host/add-home" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+      Add Home
+    </a>
+    <a href="/host/host-home" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+      Host Home
+    </a>
+    <a href="/favourite" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+      Favourite
+    </a>
+  </div>
+
+  <div class="absolute top-20 left-0 w-full md:hidden bg-blue-100 shadow-md p-4 rounded-lg hidden" id="nav-menu">
+    <a href="/" class="block text-blue-900 px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors">
+      AirBnb
+    </a>
+    <a href="/homes" class="block text-blue-900 px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors">
+      Homes
+    </a>
+    <a href="/host/add-home" class="block text-blue-900 px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors">
+      Add Home
+    </a>
+    <a href="/host/host-home" class="block text-blue-900 px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors">
+      Host Home
+    </a>
+    <a href="/favourite" class="block text-blue-900 px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors">
+      Favourite
+    </a>
+  </div>
+</header>
+
+<script>
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('hidden');
+    if (!navMenu.classList.contains('hidden')) {
+      navToggle.textContent = '❌';
+    } else {
+      navToggle.textContent = '☰';
+    }
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target !== navToggle && e.target !== navMenu) {
+      navMenu.classList.add('hidden');
+      navToggle.textContent = '☰';
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navMenu.classList.add('hidden');
+      navToggle.textContent = '☰';
+    }
+  });
+</script>
