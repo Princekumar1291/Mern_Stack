@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/buy-product', (req, res) => {
-    // console.log("form data received: ", req.body);
+    console.log("form data received: ", req.body);
     console.log("form data received: ", JSON.stringify(req.body));
     const filePath = path.join(__dirname, 'products.json');
     fs.writeFile(filePath, JSON.stringify(req.body), (err) => {
