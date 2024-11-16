@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 
 app.use((req, res, next) => {
+    console.log("this is of req: ",req);
     console.log("First middleware",`${req.method} ${req.url}`);
     next();
 });
@@ -11,7 +12,7 @@ app.use((req, res, next) => { //it will run for all routes
     next();
 });
 
-app.use("/test",(req,res,next)=>{  //it will run for all routes starting with /test
+app.use("/test",(req,res,next)=>{  //it will run for all routes starting with http://localhost:3000/test
     console.log("Third middleware",`${req.method} ${req.url}`);
     res.send("<h1>Test</h1>");
 })
