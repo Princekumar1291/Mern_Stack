@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/output.css">
+</head>
+
+<body>
+  <%- include('./partials/nav') %>
+    <h1 class="text-3xl font-bold underline text-blue-500">Hello This is Home Page</h1>
+    <ul>
+      <% if (Array.isArray(datas) && datas.length> 0) { %>
+        <% datas.forEach(data=> { %>
+          <li>
+            <%= data.name %>
+          </li>
+          <% }) %>
+            <% } else { %>
+              <li>No data found</li>
+              <% } %>
+    </ul>
+</body>
+
+</html>

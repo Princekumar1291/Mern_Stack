@@ -6,11 +6,13 @@ const getIndex = (req, res, next) => {
     res.render('store/index', { registeredHomes: registeredHomes, pageTitle: 'Hamara Bnb' });
   });
 }
+
 const getHomes = (req, res, next) => {
   Home.fetchAllHomes(registeredHomes => {
     res.render('store/homes', { registeredHomes: registeredHomes, pageTitle: 'Hamara Bnb' });
   });
 }
+
 const getHomeDetails = (req, res, next) => {
   Home.findById(req.params.homeId, (home) => {
     if (!home) {
@@ -20,7 +22,6 @@ const getHomeDetails = (req, res, next) => {
   })
 }
 
-
 const getFavorites = (req, res, next) => {
   Favorites.fetchAllFavoriates(registeredHomesIds => {
     Home.fetchAllHomes(registeredHomes => {
@@ -29,12 +30,6 @@ const getFavorites = (req, res, next) => {
     })
   });
 }
-
-// const getFavorites = (req, res, next) => {
-//   Home.fetchAllHomes(registeredHomes => {
-//     res.render('store/favourites', { registeredHomes: registeredHomes, pageTitle: 'Favorites' });
-//   });
-// }
 
 const postAddFavorites = (req, res, next) => {
   const homeId = req.body.homeId;
