@@ -24,7 +24,7 @@ app.use(errorController.get404);
 
 const mongoose = require('mongoose');
 
-const PORT = 3000;
+const PORT = 3001;
 const MONGO_DB_URL = "mongodb+srv://princekumar7320918928:uYvKrN9WlfdauaiK@princecluster.ns8if.mongodb.net/airbnb?retryWrites=true&w=majority&appName=PrinceCluster";
 mongoose.connect(MONGO_DB_URL).then(() => {
   app.listen(PORT, () => {
