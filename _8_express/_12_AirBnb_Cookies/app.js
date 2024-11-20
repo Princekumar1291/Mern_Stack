@@ -26,6 +26,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // });
 
 app.use((req, res, next) => {
+  if (!req.get("Cookie")) {
+    req.isLoggedIn = false;
+    return next();
+  }
   req.isLoggedIn = req.get("Cookie").split("=")[1] === "true";
   next();
 });
