@@ -6,7 +6,8 @@ exports.getIndex = (req, res, next) => {
     res.render("store/index", {
       homes: registeredHomes,
       pageTitle: "Tumahara airbnb",
-      isLoggedIn: req.session.isLoggedIn
+      isLoggedIn: req.session.isLoggedIn,
+      user: req.session.user
     });
   });
 };
@@ -16,7 +17,8 @@ exports.getHomes = (req, res, next) => {
     res.render("store/homes", {
       homes: registeredHomes,
       pageTitle: "Tumahara airbnb",
-      isLoggedIn: req.session.isLoggedIn
+      isLoggedIn: req.session.isLoggedIn,
+      user: req.session.user
     });
   });
 };
@@ -27,7 +29,8 @@ exports.getFavourites = (req, res, next) => {
     res.render("store/favourites", {
       homes: favouriteHomes,
       pageTitle: "Favourites",
-      isLoggedIn: req.session.isLoggedIn
+      isLoggedIn: req.session.isLoggedIn,
+      user: req.session.user
     });
   });
 };
@@ -65,6 +68,6 @@ exports.getHomeDetails = (req, res, next) => {
       console.log("Home not found");
       return res.redirect("/homes");
     }
-    res.render("store/home-detail", { home: home, pageTitle: "Home Detail", isLoggedIn: req.session.isLoggedIn });
+    res.render("store/home-detail", { home: home, pageTitle: "Home Detail", isLoggedIn: req.session.isLoggedIn, user: req.session.user });
   });
 };
