@@ -37,15 +37,6 @@ exports.getEditHome = (req, res, next) => {
 exports.postAddHome = (req, res, next) => {
   const { houseName, price, location, rating, photoUrl, description } =
     req.body;
-  console.log(
-    "Req body",
-    houseName,
-    price,
-    location,
-    rating,
-    photoUrl,
-    description
-  );
   const newHome = new Home({
     houseName,
     price,
@@ -53,6 +44,7 @@ exports.postAddHome = (req, res, next) => {
     rating,
     photoUrl,
     description,
+    host: req.session.user._id,
   });
 
   newHome.save().then(() => {
@@ -92,7 +84,7 @@ exports.postDeleteHome = (req, res, next) => {
 };
 
 exports.getHostHomes = (req, res, next) => {
-  Home.find().then((registeredHomes) => {
+  Home.find({ host: req.session.user._id }).then((registeredHomes) => {
     console.log(registeredHomes);
     res.render("host/host-homes", {
       homes: registeredHomes,
