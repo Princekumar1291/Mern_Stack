@@ -2,14 +2,14 @@ import React, { useContext } from 'react'
 import todoContext from '../store/todoContext'
 
 const AddItem = () => {
-  const {addTodoItem} =useContext(todoContext);
+  const {dispatchTodoItems} =useContext(todoContext);
 
   const onformSubmitHandler=(e)=>{
     e.preventDefault()
     const title=e.target.title.value
     const date=e.target.date.value
     if(!title || !date) return
-    addTodoItem({id: Date.now(), title, date})
+    dispatchTodoItems({type:'ADD',payload:{id: Date.now(), title, date}})
     e.target.reset()
   }
 

@@ -9,7 +9,7 @@ const AddItem = () => {
     const title=e.target.title.value
     const date=e.target.date.value
     if(!title || !date) return
-    addTodoItem({id: Date.now(), title, date})
+    addTodoItem(title, date)
     e.target.reset()
   }
 
