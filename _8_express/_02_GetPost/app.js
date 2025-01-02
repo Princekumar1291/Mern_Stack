@@ -4,8 +4,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json()); //to send json data Often sent by HTML forms. It’s suitable for basic data (key-value pairs) 
+app.use(bodyParser.urlencoded({ extended: false }));  //to send json data Often sent by HTML forms. It’s suitable for basic data (key-value pairs) 
+// app.use(bodyParser.json()); 
 
 app.get('/', (req, res) => {
     res.send(`
