@@ -23,14 +23,7 @@ class Home {
   saveHome(callback) {
     Home.fetchAllHomes((homes) => {
       homes.push(this);
-      fs.writeFile(filePath, JSON.stringify(homes), error => {
-        if (error) {
-          console.log("Error in writing file", error);
-          callback(error);
-        } else {
-          callback(null);
-        }
-      });
+      fs.writeFile(filePath, JSON.stringify(homes), callback);
     });
   }
 }
