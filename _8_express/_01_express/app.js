@@ -10,7 +10,7 @@ app.use((req, res, next) => {
 app.use((req, res, next) => { //it will run for all routes
     console.log("Second middleware",`${req.method} ${req.url}`);
     next();
-});
+}); 
 
 app.use("/test",(req,res,next)=>{  //it will run for all routes starting with http://localhost:3000/test
     console.log("Third middleware",`${req.method} ${req.url}`);
