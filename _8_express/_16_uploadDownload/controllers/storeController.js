@@ -92,6 +92,6 @@ exports.getRules = (req, res, next) => {
   //const houseId = req.params.houseId;
   const rulesFileName = 'Airbnb-Rules.pdf';
   const filePath = path.join(rootDir, 'rules', rulesFileName);
-  //res.sendFile(filePath);
+  // res.sendFile(filePath);
   res.download(filePath, "Rules.pdf");
 }
